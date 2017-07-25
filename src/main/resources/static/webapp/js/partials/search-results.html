@@ -1,0 +1,23 @@
+<div class="container-fluid bg-grey">
+    <div class="text-center">
+        <h2>Recent Search Results</h2>
+    </div>
+    <div class="row">
+        <div ng-repeat="pf in vm.searchResults" class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading" style="height:150px">
+                    <h3>{{pf.data.query.results.quote.Name}} &nbsp; ({{pf.data.query.results.quote.symbol}})</h3>
+                </div>
+                <div class="panel-body">
+                    <p><strong>Last Trade Price</strong>&nbsp;{{pf.data.query.results.quote.LastTradePriceOnly | currency}}</p>
+                    <strong>No. of Shares</strong>&nbsp;<input type="number" min="0" ng-model="pf.data.query.results.numberOfShares" style="width: 55px">
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" ng-click="addPortfolio(pf.data.query.results)">Save</button>
+                    <button class="btn btn-lg" ng-click="deleteFromSearchResults(pf.data.query.results)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-danger" ng-if="vm.helperMessage.show">{{vm.helperMessage.message}}</p>
+</div>
