@@ -51,7 +51,7 @@ public class TestApplication extends WebMvcConfigurerAdapter implements CommandL
 
     @Override
     public void run(String... strings) throws Exception {
-        repository.save(new Customer("xyz@test.com", "xyz", "abc"));
+        //repository.save(new Customer("xyz@test.com", "xyz", "abc"));
         for (Customer customer : repository.findAll()) {
             System.out.println(customer.getId());
         }

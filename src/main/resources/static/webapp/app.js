@@ -1,7 +1,7 @@
 /**
  * Created by Chaitanya on 12/7/16.
  */
-angular.module('portfolio', ['ui.router', 'dashboardModule'])
+angular.module('ketoMelts', ['ui.router', 'dashboardModule', 'createModule'])
     .config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
@@ -14,16 +14,10 @@ angular.module('portfolio', ['ui.router', 'dashboardModule'])
             templateUrl: 'webapp/js/partials/home.html',
             controller:'dashboardController'
         })
-        //saved portfolio
-        .state('clay', {
-            url: '/clay',
-            templateUrl: 'webapp/js/partials/clay.html',
-            controller:'dashboardController'
+        .state('create', {
+            url: '/create',
+            templateUrl: 'webapp/js/partials/create/create.html',
+            controller: 'createController'
         })
-        .state('checkout', {
-            url: '/checkout',
-            templateUrl: 'webapp/js/partials/checkout.html',
-            controller:'dashboardController'
-        });
 
     })
