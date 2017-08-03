@@ -1,0 +1,13 @@
+<div class="container">
+    <form>
+        <div class="form-group" name="form">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" ng-model="username" id="email">
+        </div>
+        <button class="btn btn-default" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+             ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+             ngf-resize="{width: 100, height: 100}">Select</button> &nbsp;<p>{{file.$ngfName}}</p>
+        <br>
+        <button type="submit" ng-click="submit()" class="btn btn-default">Submit</button>
+    </form>
+</div>
